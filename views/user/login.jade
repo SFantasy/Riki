@@ -1,0 +1,15 @@
+//
+   Created by fantasy on 13/10/14.
+extends ../layout
+
+block content
+    div
+        if error
+            p= error
+        else
+            p= success
+
+    form(action='/login', method='post')
+        input(placeholder='name', name='name', autocomplete='off')
+        input(placeholder='password', name='pass', type='password', autocomplete='off')
+        input(value='submit', type='submit')

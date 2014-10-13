@@ -1,0 +1,17 @@
+//
+   Created by fantasy on 13/10/14.
+
+extends ../layout
+
+block content
+    div
+        if error
+            p= error
+        else
+            p= success
+
+    form(action='/register', method='post')
+        input(placeholder='name', name='name')
+        input(placeholder='password', name='password', type='password')
+        input(placeholder='password again', name='re_password', type='password')
+        input(value='submit', type='submit')
