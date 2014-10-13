@@ -2,8 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p
-    a(href="/register") Register
-  p
-    a(href="/login") Login
+
+  if (user)
+    p Welcome, #{user}
+    form(action='/tweet', method='post')
+      input(placeholder='What is up today?')
+      input(value='submit', type='submit')
+  else
+    p
+      a(href="/register") Register
+    p
+      a(href="/login") Login

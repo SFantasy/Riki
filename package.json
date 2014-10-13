@@ -17,6 +17,8 @@
   "devDependencies": {
     "mongoose": "~3.8.17",
     "crypto": "0.0.3",
-    "xss": "~0.1.12"
+    "xss": "~0.1.12",
+    "express-session": "~1.8.2",
+    "connect-mongo": "~0.4.1"
   }
 }
