@@ -10,7 +10,10 @@
 
 var config = {
   db: 'mongodb://127.0.0.1/riki',
-  db_name: 'riki'
+  db_name: 'riki',
+
+  cookie_name: 'riki',
+  session_secret: 'riki'
 };
 
 module.exports = config;
