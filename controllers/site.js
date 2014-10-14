@@ -15,7 +15,7 @@ exports.index = function (req, res, next) {
 
   res.render('index', {
     title: 'Riki - Homepage',
-    user: req.session.user.name
+    user: req.session.user ? req.session.user.name : ''
   });
 
 };
