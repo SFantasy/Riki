@@ -6,10 +6,14 @@ block content
   if (user)
     p Welcome, #{user}
     form(action='/tweet', method='post')
-      input(placeholder='What is up today?')
+      input(name='content' placeholder='What is up today?')
       input(value='submit', type='submit')
   else
     p
       a(href="/register") Register
     p
       a(href="/login") Login
+
+  ul
+      each val in tweets
+          li #{val.content} - #{val.create_at}

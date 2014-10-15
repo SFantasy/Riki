@@ -10,6 +10,7 @@
 
 var site = require('./controllers/site');
 var user = require('./controllers/user');
+var tweet = require('./controllers/tweet');
 
 module.exports = function (app) {
 
@@ -20,5 +21,7 @@ module.exports = function (app) {
 
   app.get('/login', user.showLogin);
   app.post('/login', user.login);
+
+  app.post('/tweet', tweet.newTweet);
 
 };

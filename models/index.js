@@ -18,6 +18,8 @@ mongoose.connect(config.db, function (err) {
   }
 });
 
-require('./User');
+require('./user');
+require('./tweet');
 
 exports.User = mongoose.model('User');
+exports.Tweet = mongoose.model('Tweet');

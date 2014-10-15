@@ -11,11 +11,23 @@
 var util = require('../util');
 var config = require('../config');
 
+var User = require('../service').User;
+var Tweet = require('../service').Tweet;
+
 exports.index = function (req, res, next) {
 
-  res.render('index', {
-    title: 'Riki - Homepage',
-    user: req.session.user ? req.session.user.name : ''
+  var tweet_list = [];
+
+  Tweet.getAllTweet(function (err, tweets) {
+    if (err) return next(err);
+
+    tweet_list = tweets;
+
+    res.render('index', {
+      title: 'Riki - Homepage',
+      user: req.session.user ? req.session.user.name : '',
+      tweets: tweet_list
+    });
   });
 
 };
