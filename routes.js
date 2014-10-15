@@ -22,6 +22,8 @@ module.exports = function (app) {
   app.get('/login', user.showLogin);
   app.post('/login', user.login);
 
+  app.get('/logout', user.logout);
+
   app.post('/tweet', tweet.newTweet);
 
 };

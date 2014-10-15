@@ -84,6 +84,14 @@ exports.login = function (req, res, next) {
   });
 };
 
+// logout
+
+exports.logout = function (req, res, next) {
+  req.session.destroy();
+  res.clearCookie(config.cookie_name, { path: '/' });
+  res.redirect('/');
+};
+
 function gen_session(user, res) {
   var auth_token = util.encrypt(user._id + '\t' + user.name + '\t' + user.pass, config.session_secret);
   res.cookie(config.cookie_name, auth_token, {
