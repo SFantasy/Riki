@@ -15,8 +15,9 @@ block content
       a(href="/login") Login
 
   ul
-      each val in tweets
-          li #{val.content} - #{val.create_at}
+    each val in tweets
+      li #{val.content} - #{val.create_at}
 
-  footer
+  if (user)
+    footer
       a(href='/logout') logout
