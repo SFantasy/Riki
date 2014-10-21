@@ -21,7 +21,7 @@ exports.index = function (req, res, next) {
   Tweet.getAllTweet(function (err, tweets) {
     if (err) return next(err);
 
-    tweet_list = tweets;
+    tweet_list = tweets.reverse();
 
     res.render('index', {
       title: 'Riki',

@@ -19,10 +19,9 @@ block content
 
   .container
     if (user)
-      p Welcome, #{user}
-      form(action='/tweet', method='post')
-        input(name='content' placeholder='What is up today?')
-        input(value='submit', type='submit')
+      form(action='/tweet', method='post').tweet
+        input(name='content' placeholder='What is up today?').tweet-input
+        input(value='submit', type='submit').tweet-submit
 
     ul.timeline
       each val in tweets

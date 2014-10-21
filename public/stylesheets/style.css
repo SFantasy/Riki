@@ -17,6 +17,10 @@ a { text-decoration: none; }
 .brand { float: left; }
 .nav-bar { float: right; }
 .nav-bar li { display: inline-block; margin-left: 20px; }
+.nav-bar li p { color: whitesmoke; }
 
 .container { max-width: 640px; margin: 0 auto; }
+.tweet { width: 100%; margin: 10px 0; position: relative; }
+.tweet-input { width: 100%; -webkit-appearance: none; border: none; padding: 5px; margin: 10px 0; box-sizing: border-box; border-radius: 4px; }
+
 .timeline li { background-color: white; border: 1px solid rgba(255, 255, 255, .3); border-radius: 4px; padding: 5px 10px; margin: 10px 0;  }
