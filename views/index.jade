@@ -1,23 +1,29 @@
 extends layout
 
 block content
-  h1= title
+  header.header.clearfix
+    .container
+      h1.brand
+        a(href='/') #{title}
+      ul.nav-bar
+        if (user)
+          li
+            p #{user}
+          li
+            a(href='/logout') logout
+        else
+          li
+            a(href='/register') Register
+          li
+            a(href='/login') Login
 
-  if (user)
-    p Welcome, #{user}
-    form(action='/tweet', method='post')
-      input(name='content' placeholder='What is up today?')
-      input(value='submit', type='submit')
-  else
-    p
-      a(href="/register") Register
-    p
-      a(href="/login") Login
+  .container
+    if (user)
+      p Welcome, #{user}
+      form(action='/tweet', method='post')
+        input(name='content' placeholder='What is up today?')
+        input(value='submit', type='submit')
 
-  ul
-    each val in tweets
-      li #{val.content} - #{val.create_at}
-
-  if (user)
-    footer
-      a(href='/logout') logout
+    ul.timeline
+      each val in tweets
+        li #{val.content} - #{val.create_at}

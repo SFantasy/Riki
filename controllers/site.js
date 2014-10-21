@@ -24,7 +24,7 @@ exports.index = function (req, res, next) {
     tweet_list = tweets;
 
     res.render('index', {
-      title: 'Riki - Homepage',
+      title: 'Riki',
       user: req.session.user ? req.session.user.name : '',
       tweets: tweet_list
     });

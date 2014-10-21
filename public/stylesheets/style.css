@@ -1,8 +1,22 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 400 14px/1.5 Gerogia,"Open Sans",sans-serif;
+  background-image: linear-gradient(45deg,#0A1855 0,#DA0024 100%);
+  min-height: 100vh;
 }
 
-a {
-  color: #00B7FF;
-}
+ul, li { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; }
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+.header { position: relative; padding: 0 100px; border-bottom: 1px solid rgba(255, 255, 255, .3); }
+.header h1 { margin: 0; }
+.header a { color: white; }
+
+.brand, .nav-bar { height: 70px; line-height: 70px; }
+.brand { float: left; }
+.nav-bar { float: right; }
+.nav-bar li { display: inline-block; margin-left: 20px; }
+
+.container { max-width: 640px; margin: 0 auto; }
+.timeline li { background-color: white; border: 1px solid rgba(255, 255, 255, .3); border-radius: 4px; padding: 5px 10px; margin: 10px 0;  }
