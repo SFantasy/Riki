@@ -14,7 +14,7 @@ exports.newTweet = function (req, res, next) {
 
   var content = req.body.content;
 
-  Tweet.newAndSave(content, req.session.user._id, function (err, topic) {
+  Tweet.newAndSave(content, req.session.user._id, req.session.user.name, function (err, topic) {
     if (err) return next(err);
 
     res.redirect('/');

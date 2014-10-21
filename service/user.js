@@ -17,6 +17,12 @@ exports.getUserByQuery = function (name, callback) {
 
 };
 
+exports.getUserById = function (id, callback) {
+
+  User.find({_id: id}, callback);
+
+};
+
 exports.newAndSave = function (name, password, callback) {
 
   var user = new User();

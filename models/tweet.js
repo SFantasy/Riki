@@ -15,6 +15,7 @@ var ObjectId = Schema.ObjectId;
 var TweetSchema = new Schema({
   content: { type: String },
   author_id: { type: ObjectId },
+  author_name: { type: String },
   create_at: { type: Date, default: Date.now }
 });
 
