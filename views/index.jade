@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  if (error)
+    p= error
   header.header.clearfix
     .container
       h1.brand

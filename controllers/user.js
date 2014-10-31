@@ -31,6 +31,18 @@ exports.register = function (req, res, next) {
   var password = xss(req.param('password'));
   var re_pass = xss(req.param('re_password'));
 
+  if (name.length < 2) {
+    return res.render('user/register', {
+      error: 'Name is longer than 2'
+    });
+  }
+
+  if (password !== re_pass) {
+    return res.render('user/register', {
+      error: 'Two passwords should be the same.'
+    });
+  }
+
   User.getUserByQuery(name, function (err, user) {
     if (err) return next(err);
 
